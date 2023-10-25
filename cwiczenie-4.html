@@ -26,8 +26,31 @@
 			var a = document.getElementById('a').value;
 			var b = document.getElementById('b').value;
 			var c = document.getElementById('c').value;
-			
-			
+			var numbs = [a,b,c];
+			var wynik="";
+			toString(wynik);
+
+			var highNum=numbs[0];
+			var lowNum=numbs[0];
+			for(var i=0; i<3; i++){
+				if(numbs[i]>highNum) highNum=numbs[i];
+				if(numbs[i]<lowNum) lowNum=numbs[i];
+				
+			} 
+			wynik+=`<p>Najwyższa liczba: ${highNum}</p><br>`;
+			wynik+=`<p>Najniższa liczba: ${lowNum}</p><br>`;
+			wynik+=`<p>Wartość bezwzględna z a:`+Math.abs(numbs[0])+`</p><br>`;
+			wynik+=`<p>Wartość bezwzględna z b:`+Math.abs(numbs[1])+`</p><br>`;
+			wynik+=`<p>Wartość bezwzględna z c:`+Math.abs(numbs[2])+`</p><br>`;
+
+			for(var i=0; i<3;i++){
+				if(numbs[i]%2==0){
+					wynik+=`<p>${numbs[i]} jest parzysta </p><br>`;
+				} else wynik+=`<p>${numbs[i]} jest nieparzysta </p><br>`;
+			}
+
+
+			document.getElementById("wynik").innerHTML = wynik;
 		}
 
 	</script>
