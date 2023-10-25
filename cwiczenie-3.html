@@ -21,8 +21,30 @@
 	
 		function ktora_cwiartka()
 		{
-			
-			
+			var quarter = ["cwiartka 1","cwiartka 4","cwiartka 2","cwiartka 3"];
+			var mod = 0;
+			var x = document.getElementById("x").value		
+			var y = document.getElementById("y").value	
+			var wynik;	
+			if(x<0){
+				mod = 2;
+			}
+			if(y<0){
+				wynik = quarter[mod+1];
+			} else wynik = quarter[mod];
+
+			if(x==0 && y==0){
+				wynik = "Punkt P=(0,0) jest początkiem układu współrzędnych";
+			} else if(x==0||y==0){
+				wynik = "Punkt leży na jednej z osi układu";
+			} 
+
+			//easter egg
+			if(x==15 && y==96){
+				wynik="Kartezjusz żył. Był francuskim filozofem, matematykiem i naukowcem";
+			}
+
+			document.getElementById("wynik").innerHTML = wynik;
 		}
 
 	</script>
