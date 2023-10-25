@@ -24,16 +24,17 @@
 		function getDayName()
 		{
 			var dayNum = document.getElementById("daynum").value;
-			var dayName=["Monday - poniedziałek","Tuesday - wtorek","Wednesday - środa","Thursday - czwartek","Friday - piątek","Saturday - sobota","Sunday - niedziela"];
+			var dayName=["Monday - poniedziałek","Tuesday - wtorek","Wednesday - środa","Thursday - czwartek","Friday - piątek, piąteczek, piątunio","Saturday - sobota","Sunday - niedziela"];
+			var dayColor=["","","","","yellow","green","green"];
 
-			for(var i=0; i<7; i++){
+			for(var i=0; i<8; i++){
 				if(dayNum>7){
 					document.getElementById("wynik").innerHTML = "To nie jest prawidłowy numer dnia tygodnia!";
 					wynik.style.color ="red";
 			}
 				if(i==dayNum){ 
 					document.getElementById("wynik").innerHTML = dayName[i-1];
-					wynik.style.color ="";
+					wynik.style.color =dayColor[i-1];
 				}
 			} 
 			
